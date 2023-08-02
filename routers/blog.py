@@ -36,7 +36,7 @@ async def create_blog(name:str=Form(...), body:str=Form(...), owner_id:int=Form(
     with open(filename, "wb") as f:
         f.write(content)
 
-    new_blog = models.Blog(name=name, body=body, owner_id=owner_id, url=f"http://127.0.0.1:8000/{filename}")
+    new_blog = models.Blog(name=name, body=body, owner_id=owner_id, url=f"https://blog-1-k4272118.deta.app/{filename}")
 
     db.add(new_blog)
     db.commit()
